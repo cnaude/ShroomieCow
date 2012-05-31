@@ -1,6 +1,6 @@
 name: ShroomieCow
 main: me.cnaude.plugin.ShroomieCow
-version: 0.1
+version: 0.2
 author: cnaude
 description: Allows players to convert a cow into a mooshroom cow.
 website: http://dev.bukkit.org/server-mods/shroomiecow/

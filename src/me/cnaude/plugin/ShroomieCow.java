@@ -5,13 +5,9 @@
 package me.cnaude.plugin;
 
 import org.bukkit.ChatColor;
-import org.bukkit.EntityEffect;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.EntityType;
-import org.bukkit.entity.LivingEntity;
-import org.bukkit.entity.Player;
+import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -45,9 +41,12 @@ public class ShroomieCow extends JavaPlugin implements Listener {
                         } else {
                             bait.setAmount(amt - 1);
                         }
-                        Location loc = e.getLocation();                        
+                        Location loc = e.getLocation();
+                        Cow c = (Cow)e;
+                        int age = c.getAge();                                             
                         e.remove();
-                        p.getWorld().spawnCreature(loc, EntityType.MUSHROOM_COW);
+                        MushroomCow m = (MushroomCow)p.getWorld().spawnCreature(loc, EntityType.MUSHROOM_COW);
+                        m.setAge(age);                        
                         p.sendMessage(ChatColor.GREEN + "The cow feels different.");
                     }
                 }
